@@ -1,11 +1,15 @@
 " NeoVim Config
+
 " let
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'ocean-community'
+
 " autocmd
 autocmd vimenter * ++nested colorscheme material
+
 " syntax
 syntax enable
+
 " set
 set encoding=utf-8
 set fileencoding=utf-8

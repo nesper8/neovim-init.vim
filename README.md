@@ -1,4 +1,5 @@
 ### i know you're here for the init.vim and the screenshots
-![Screenshot from 2021-05-08 00-27-41.png](https://github.com/nesper8/neovim-dots/blob/main/screenshots/Screenshot%20from%202021-05-08%2000-27-41.png)
-![Screenshot from 2021-05-08 00-27-41.png](https://github.com/nesper8/neovim-dots/blob/main/screenshots/Screenshot%20from%202021-05-08%2000-27-57.png)
-![Screenshot from 2021-05-08 00-27-41.png](https://github.com/nesper8/neovim-dots/blob/main/screenshots/Screenshot%20from%202021-05-08%2000-27-49.png)
+![1.png](https://github.com/nesper8/neovim-dots/blob/main/screenshots/1.png)
+![2.png](https://github.com/nesper8/neovim-dots/blob/main/screenshots/2.png)
+![3.png](https://github.com/nesper8/neovim-dots/blob/main/screenshots/3.png)
+![4.png](https://github.com/nesper8/neovim-dots/blob/main/screenshots/4.png)

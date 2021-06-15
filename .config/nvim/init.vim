@@ -1,44 +1,44 @@
-" NeoVim Config
-
-" let
-let g:material_terminal_italics = 1
-let g:material_theme_style = 'ocean-community'
+" nesper8's NeoVim Config
 
 " autocmd
-autocmd vimenter * ++nested colorscheme material
+autocmd vimenter * ++nested colorscheme gruvbox
 autocmd vimenter,BufNewFile,BufRead * set formatoptions-=cro
 
-" syntax
-syntax enable
-
 " set
-set encoding=utf-8
-set fileencoding=utf-8
-set termencoding=utf-8
 set hidden
 set number
-set cmdheight=2
 set smartindent
 set autoindent
 set splitbelow
 set splitright
-set conceallevel=0
-set nowrap
 set termguicolors
 set cursorline
 set noshowmode
-set iskeyword+=-
 set ruler
-set background=dark
-set updatetime=300
+set nobackup
+set nowritebackup
+set noswapfile
+set shortmess+=c
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+set cmdheight=2
+set conceallevel=0
 set signcolumn=number
+set iskeyword+=-
+set updatetime=300
 set showtabline=2
 set tabstop=4
 set laststatus=0
 set pumheight=10
-set shiftwidth=2
-set nobackup
-set nowritebackup
+set shiftwidth=4
+set completeopt=menuone
+set guifont=FiraCode\ Nerd\ Mono:h15
+
+" Others
+syntax enable
+filetype plugin on
+setlocal wrap
 
 " Plugins
 call plug#begin('~/.config/nvim/plugged')
@@ -47,28 +47,47 @@ call plug#begin('~/.config/nvim/plugged')
 	" Airline
 	Plug 'vim-airline/vim-airline'
 	Plug 'vim-airline/vim-airline-themes'
+    " Commentary
+    Plug 'tpope/vim-commentary'
 	" Sensible
 	Plug 'tpope/vim-sensible'
 	" Better Syntax Support
 	Plug 'sheerun/vim-polyglot'
-	" Auto Pairs for '[' '(' '{'
-	Plug 'jiangmiao/auto-pairs'
 	" LSP
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	" GitGutter
 	Plug 'airblade/vim-gitgutter'
 	" Themes
-	Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+	Plug 'morhetz/gruvbox'
 call plug#end()
+
+" Gruvbox
+let g:gruvbox_bold = 1
+let g:gruvbox_italic = 0
+let g:gruvbox_transparant_bg = 1
+let g:gruvbox_termcolors = 1
+let g:gruvbox_invert_tabline = 1
 
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 
+" Coc
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " Sensible
 set scrolloff=6
-set sidescrolloff=6
+set sidescrolloff=10
 
 " Nuake
 nnoremap <F4> :Nuake<CR>
@@ -107,3 +126,4 @@ function! ToggleVExplorer()
     endif
 endfunction
 map <silent> <C-O> :call ToggleVExplorer()<CR>
+ 
